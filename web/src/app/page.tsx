@@ -11,6 +11,7 @@ import { api } from "@/lib/api";
 import { useAuth } from "@/store/use-auth";
 import { ChampionSearch } from "@/components/game/champion-search";
 import { AttributeCell } from "@/components/game/attribute-cell";
+import { GameInterface } from "@/components/game/game-interface";
 
 interface GameState {
   sessionId: string;
@@ -102,17 +103,12 @@ export default function GamePage() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col items-center p-4">
-      <header className="w-full max-w-5xl flex justify-between items-center mb-8 py-4 border-b border-zinc-800">
-        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-500">
-          Loldle Clone
-        </h1>
-        <div className="flex items-center gap-4">
-          <div className="text-sm">
-            Olá,{" "}
-            <span className="font-bold text-blue-400">{user?.nickname}</span>
-          </div>
-        </div>
-      </header>
+      <div className="min-h-screen bg-zinc-950 p-4 pt-10">
+        <GameInterface
+          startEndpoint="/gameplay/daily/lol/start"
+          title="Desafio Diário Global"
+        />
+      </div>
 
       <div className="w-full max-w-md mb-8">
         {game?.status === "WON" ? (
