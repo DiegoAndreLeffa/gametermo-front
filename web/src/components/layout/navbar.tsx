@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { LogOut, Trophy, Users, Gamepad2 } from "lucide-react";
+import {
+  LogOut,
+  Trophy,
+  Users,
+  Gamepad2,
+  InfinityIcon,
+  Timer,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/store/use-auth";
 
@@ -50,6 +57,28 @@ export function Navbar() {
             >
               <Users className="w-4 h-4 mr-2" />
               Salas
+            </Button>
+          </Link>
+
+          <Link href="/time-attack">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+            >
+              <Timer className="w-4 h-4 mr-2" />
+              Time Attack
+            </Button>
+          </Link>
+
+          <Link href="/infinite">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-zinc-400 hover:text-white"
+            >
+              <InfinityIcon className="w-4 h-4 mr-2" />
+              Infinito
             </Button>
           </Link>
 
