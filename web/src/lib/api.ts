@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "gametermo-api-production.up.railway.app";
+const API_URL = "https://gametermo-api-production.up.railway.app";
 
 export const api = axios.create({
   baseURL: API_URL,
