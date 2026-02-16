@@ -22,9 +22,14 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    // Adicione este log para ver o erro real no console do navegador (F12)
+    console.error("Erro na API:", error.response);
+
     if (error.response?.status === 401) {
       if (typeof window !== 'undefined') {
-        localStorage.removeItem('loldle-token');
+        // COMENTE ISSO TEMPORARIAMENTE PARA DEBUGAR
+        // localStorage.removeItem('loldle-token'); 
+        console.warn("Deu 401, mas segurei o token para debug.");
       }
     }
     return Promise.reject(error);
