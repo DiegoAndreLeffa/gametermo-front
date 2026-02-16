@@ -35,7 +35,7 @@ export function AttributeCell({
       animate={{ rotateX: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay }}
       className={`
-        w-20 h-20 md:w-24 md:h-24 
+        w-24 h-24 md:w-32 md:h-32 
         flex flex-col items-center justify-center 
         border-2 rounded-md shadow-md p-1
         text-center text-xs md:text-sm font-bold text-white
